@@ -2,7 +2,7 @@ import { sync } from "glob";
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
-import { AllPostContents, PostDesc, PostDetail } from "@/type/types";
+import { AllPostContents, PostDesc } from "@/type/types";
 import { serialize } from "next-mdx-remote/serialize";
 
 const BASE_PATH = "src/post";
@@ -17,6 +17,8 @@ export const getAllPosts = (): PostDesc[] => {
 
         // filePath를 split 한뒤, 카테고리만 pop()
         const category = path.dirname(filePath).split(path.sep).pop() || "All";
+        
+        const formattedCategory = category.charAt(0).toUpperCase() + category.slice(1);
 
         const fileContents = fs.readFileSync(filePath, "utf-8");
 
@@ -26,32 +28,17 @@ export const getAllPosts = (): PostDesc[] => {
             id,
             title: data.title,
             date: new Date(data.date),
-            category,
+            category: formattedCategory
         };
     })
 }
 
-export const getPostByCategory = (category: string): PostDesc[] => {
+export const getPostList = (category?: string): PostDesc[] => {
     const allPosts = getAllPosts();
 
-    return allPosts.filter(post => post.category === category);
-}
+    const filteredPosts = category ? allPosts.filter(post => post.category === category) : allPosts
 
-export const getPostList = async (category?: string): Promise<PostDesc[]> => {
-    const fileNames = category ? getPostByCategory(category) : getAllPosts();
-
-    const allPostData = fileNames.map((post) => {
-        return {
-            id: post.id,
-            title: post.title,
-            date: new Date(post.date),
-            category: post.category
-        }
-    })
-
-    allPostData.sort((a, b) => b.date.getTime() - a.date.getTime())
-
-    return allPostData;
+    return filteredPosts.sort((a, b) => b.date.getTime() - a.date.getTime())
 }
 
 export const getPostDetail = async (
