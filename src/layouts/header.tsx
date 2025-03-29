@@ -9,7 +9,7 @@ export default function Header() {
         <section className="w-full flex justify-center bg-gray-50 shadow-sm">
             <div className="flex justify-between max-w-5xl w-full p-4 items-center">
                 <div>
-                    <Link href={'/blog'} className="font-bold text-lg">Hyun-devlog</Link>
+                    <Link href={'/blog'} className="font-bold text-lg">Hyun_dev</Link>
                 </div>
                 <div className="flex items-center space-x-4">
                     <Link href={'/blog'}>Posts</Link>
