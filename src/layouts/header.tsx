@@ -7,12 +7,12 @@ export default function Header() {
 
     return (
         <section className="w-full flex justify-center bg-gray-50 shadow-sm">
-            <div className="flex justify-between max-w-6xl w-full p-4 items-center">
+            <div className="flex justify-between max-w-5xl w-full p-4 items-center">
                 <div>
-                    <Link href={'/'} className="font-bold text-lg">Hyun-devlog</Link>
+                    <Link href={'/blog'} className="font-bold text-lg">Hyun-devlog</Link>
                 </div>
                 <div className="flex items-center space-x-4">
-                    <Link href={'/'}>Posts</Link>
+                    <Link href={'/blog'}>Posts</Link>
                     <Link href={'/about'}>About</Link>
                     <Button variant="ghost" size='icon' className="size-5">
                         <Link href={'https://github.com/joonda'}>

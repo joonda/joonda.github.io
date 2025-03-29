@@ -2,7 +2,8 @@ import { sync } from "glob";
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
-import { PostDesc } from "@/type/types";
+import { AllPostContents, PostDesc, PostDetail } from "@/type/types";
+import { serialize } from "next-mdx-remote/serialize";
 
 const BASE_PATH = "src/post";
 const POST_PATH = path.join(process.cwd(), BASE_PATH);
@@ -51,4 +52,24 @@ export const getPostList = async (category?: string): Promise<PostDesc[]> => {
     allPostData.sort((a, b) => b.date.getTime() - a.date.getTime())
 
     return allPostData;
+}
+
+export const getPostDetail = async (
+    category: string, slug: string
+): Promise<AllPostContents> => {
+    const filePath = path.join(POST_PATH, category, `${slug}.mdx`)
+
+    const fileContents = fs.readFileSync(filePath, "utf-8")
+
+    const {data, content} = matter(fileContents)
+
+    const mdxSource = await serialize(content);
+
+    return {
+        id: slug,
+        title: data.title,
+        date: new Date(data.date),
+        category,
+        content: mdxSource
+    }
 }

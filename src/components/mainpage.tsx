@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { PostDesc } from "@/type/types";
+import { getAllPosts } from "@/lib/posts";
 
 interface MainPageProps {
     postList:PostDesc[];
@@ -8,20 +9,25 @@ interface MainPageProps {
 
 export default async function MainPage({postList}: MainPageProps) {
 
+  const posts = getAllPosts()
+  const categories = posts.map(post => post.category);
+
   return (
-    <section>
-      <section>
+    <section className="max-w-5xl mx-auto">
+      <section className="p-4">
+        <p className="text-3xl">Tags</p>
         <div>
-          {postList.map((post, index) => {
+          {categories.map((category, index) => {
             return (
-              <Link key={index} href={`/blog/${post.category}`}>
-                <Button key={index}>{post.category}</Button>
+              <Link key={index} href={`/blog/${category}`}>
+                <Button key={index}>{category}</Button>
               </Link>
             );
           })}
         </div>
       </section>
-      <section>
+      <section className="p-4">
+        <p className="text-3xl">Posts</p>
         <div>
           {postList.map((post, index) => {
             return (
