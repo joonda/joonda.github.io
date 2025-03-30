@@ -34,7 +34,7 @@ export const getAllPosts = (): PostDesc[] => {
             id,
             title: data.title,
             date: new Date(data.date),
-            category: formattedCategory
+            category: category
         };
     })
 }
