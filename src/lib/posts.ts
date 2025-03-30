@@ -2,14 +2,20 @@ import { sync } from "glob";
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
-import { AllPostContents, PostDesc } from "@/type/types";
-import { serialize } from "next-mdx-remote/serialize";
+import { PostDesc, PostDetail } from "@/type/types";
 
 const BASE_PATH = "src/post";
 const POST_PATH = path.join(process.cwd(), BASE_PATH);
 
+export const getPostPath = (category?: string) => {
+    const folder = category || "**";
+    const postPaths: string[] = sync(`${POST_PATH}/${folder}/*.mdx`)
+
+    return postPaths
+}
+
 export const getAllPosts = (): PostDesc[] => {
-    const postPaths: string[] = sync(`${POST_PATH}/**/*.mdx`);
+    const postPaths= getPostPath()
 
     return postPaths.map((filePath) => {
         
@@ -43,20 +49,23 @@ export const getPostList = (category?: string): PostDesc[] => {
 
 export const getPostDetail = async (
     category: string, slug: string
-): Promise<AllPostContents> => {
-    const filePath = path.join(POST_PATH, category, `${slug}.mdx`)
+): Promise<PostDetail> => {
 
-    const fileContents = fs.readFileSync(filePath, "utf-8")
+        const filePath = path.join(POST_PATH, category, `${slug}.mdx`)
 
-    const {data, content} = matter(fileContents)
+        if (!fs.existsSync(filePath)) {
+            throw new Error (`File not found: ${filePath}`);
+        }
 
-    const mdxSource = await serialize(content);
-
-    return {
-        id: slug,
-        title: data.title,
-        date: new Date(data.date),
-        category,
-        content: mdxSource
-    }
+        const fileContents = fs.readFileSync(filePath, "utf-8")
+    
+        const {data, content} = matter(fileContents)
+    
+        return {
+            id: slug,
+            title: data.title,
+            date: new Date(data.date),
+            category,
+            content: content
+    } 
 }

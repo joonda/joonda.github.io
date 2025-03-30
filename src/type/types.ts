@@ -1,5 +1,3 @@
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
-
 export interface PostDesc {
     id: string;
     title: string;
@@ -7,8 +5,6 @@ export interface PostDesc {
     category: string;
 }
 
-export interface PostDetail{
-    content: MDXRemoteSerializeResult;
+export interface PostDetail extends PostDesc {
+    content: string;
 }
-
-export interface AllPostContents extends PostDesc, PostDetail {};
