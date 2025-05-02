@@ -60,13 +60,13 @@ export default async function Page({ params }: PageProps) {
   const post = await getPostDetail(category, slug);
 
   return (
-    <section className="flex flex-col mt-20 max-w-4xl mx-auto px-20">
+    <section className="flex flex-col mt-20 px-20">
       <div className="text-center p-4">
         <p className="text-3xl font-bold">{post.title}</p>
         <p className="mt-4">{post.date.toLocaleDateString()}</p>
       </div>
-      <div className="flex justify-center mt-20">
-        <article className="prose">
+      <div className="mt-20">
+        <article className="prose max-w-3xl mx-auto">
           {/* <MdxContent source={detail} /> */}
           <PostBody post={post} />
         </article>
