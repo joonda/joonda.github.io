@@ -96,6 +96,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
       <changelist id="06ca784c-4b50-4301-8eb7-4bffc67c6cd6" name="변경" comment="" />
+      <changelist id="" name="새 변경 목록" comment="" />
       <created>1745840853237</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -104,7 +105,7 @@
       <workItem from="1745841071935" duration="206000" />
       <workItem from="1745841283749" duration="1938000" />
       <workItem from="1746197036136" duration="3891000" />
-      <workItem from="1746200953390" duration="238000" />
+      <workItem from="1746200953390" duration="302000" />
     </task>
     <servers />
   </component>
