@@ -1,0 +1,17 @@
+name: GitHub Pages Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build and Deploy
+        run: |
+          echo "This is where your build and deployment logic goes"
