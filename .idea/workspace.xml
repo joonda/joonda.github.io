@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06ca784c-4b50-4301-8eb7-4bffc67c6cd6" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/post/PS/boj-30804.mdx" afterDir="false" />
+    <list default="true" id="06ca784c-4b50-4301-8eb7-4bffc67c6cd6" name="변경" comment="boj 30804 post">
+      <change afterPath="$PROJECT_DIR$/public/posts/java/spring-security-basic/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/post/Java/spring-security-basic.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/post/Java/object-mapper.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/post/Java/dto-discussion.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +23,12 @@
     &quot;assignee&quot;: &quot;joonda&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:joonda/joonda.github.io.git",
-    "accountId": "651cad30-2073-4d8e-8011-00ff2145352e"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:joonda/joonda.github.io.git&quot;,
+    &quot;accountId&quot;: &quot;651cad30-2073-4d8e-8011-00ff2145352e&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -60,23 +60,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/posts/java/spring-security" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.Next.js: 서버 측">
     <configuration name="Next.js: 클라이언트 측에서 디버그" type="JavascriptDebugType" uri="http://localhost:3000/">
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="ShConfigurationType">
-      <option name="SCRIPT_TEXT" value="" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <option name="EXECUTE_SCRIPT_FILE" value="true" />
-      <envs />
       <method v="2" />
     </configuration>
     <configuration name="Next.js: 서버 측" type="js.build_tools.npm">
@@ -109,8 +99,27 @@
       <workItem from="1745841283749" duration="1938000" />
       <workItem from="1746197036136" duration="3891000" />
       <workItem from="1746200953390" duration="302000" />
-      <workItem from="1746201903357" duration="2170000" />
+      <workItem from="1746201903357" duration="2385000" />
+      <workItem from="1746204312234" duration="322000" />
+      <workItem from="1746541500447" duration="2989000" />
     </task>
+    <task id="LOCAL-00001" summary="dto-discussion post upload">
+      <option name="closed" value="true" />
+      <created>1746204120753</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1746204120753</updated>
+    </task>
+    <task id="LOCAL-00002" summary="boj 30804 post">
+      <option name="closed" value="true" />
+      <created>1746204273739</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746204273739</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,5 +135,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dto-discussion post upload" />
+    <MESSAGE value="boj 30804 post" />
+    <option name="LAST_COMMIT_MESSAGE" value="boj 30804 post" />
   </component>
 </project>
