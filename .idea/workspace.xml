@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06ca784c-4b50-4301-8eb7-4bffc67c6cd6" name="변경" comment="define github actions workflow">
+    <list default="true" id="06ca784c-4b50-4301-8eb7-4bffc67c6cd6" name="변경" comment="post boj-30804 edit">
       <change afterPath="$PROJECT_DIR$/src/post/PS/boj-5430.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/file.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/window.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainpage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainpage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/post/PS/boj-30804.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/post/PS/boj-30804.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +111,7 @@
       <workItem from="1746541500447" duration="2989000" />
       <workItem from="1746544495189" duration="2594000" />
       <workItem from="1746967745321" duration="330000" />
-      <workItem from="1746968088990" duration="1874000" />
+      <workItem from="1746968088990" duration="2851000" />
     </task>
     <task id="LOCAL-00001" summary="dto-discussion post upload">
       <option name="closed" value="true" />
@@ -155,7 +145,39 @@
       <option name="project" value="LOCAL" />
       <updated>1746545998272</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="delete useless files">
+      <option name="closed" value="true" />
+      <created>1746970070998</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746970070998</updated>
+    </task>
+    <task id="LOCAL-00006" summary="package updates (next.js 15.2.4)">
+      <option name="closed" value="true" />
+      <created>1746970094911</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1746970094911</updated>
+    </task>
+    <task id="LOCAL-00007" summary="remove duplicate categories">
+      <option name="closed" value="true" />
+      <created>1746970118192</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1746970118192</updated>
+    </task>
+    <task id="LOCAL-00008" summary="post boj-30804 edit">
+      <option name="closed" value="true" />
+      <created>1746970150016</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746970150016</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +199,10 @@
     <MESSAGE value="boj 30804 post" />
     <MESSAGE value="spring security basic post" />
     <MESSAGE value="define github actions workflow" />
-    <option name="LAST_COMMIT_MESSAGE" value="define github actions workflow" />
+    <MESSAGE value="delete useless files" />
+    <MESSAGE value="package updates (next.js 15.2.4)" />
+    <MESSAGE value="remove duplicate categories" />
+    <MESSAGE value="post boj-30804 edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="post boj-30804 edit" />
   </component>
 </project>
