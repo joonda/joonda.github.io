@@ -9,7 +9,8 @@ interface MainPageProps {
 
 export default async function MainPage({ postList }: MainPageProps) {
   const posts = getPostList();
-  const categories = posts.map((post) => post.category);
+  let categories = posts.map((post) => post.category);
+  categories = [...new Set(categories)];
 
   return (
     <section className="max-w-5xl mx-auto">
