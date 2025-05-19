@@ -29,13 +29,21 @@ export default async function MainPage({ postList }: MainPageProps) {
       </section>
       <section className="p-4">
         <p className="text-3xl py-4 font-bold">Posts</p>
-        <div className="flex gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {postList.map((post, index) => {
           return (
-            <div key={index} >
-              <p>{post.date.toLocaleDateString()}</p>
-              <Link href={`/blog/${post.category}/${post.id}`}>{post.title}</Link>
-              <p>{post.category}</p>
+            <div key={index}>
+              <p className='text-sm text-gray-500'>
+                  {post.date.toLocaleDateString()}
+              </p>
+              <Link href={`/blog/${post.category}/${post.id}`}
+                className='text-lg font-medium hover:underline'
+              >
+                  {post.title}
+              </Link>
+              <p className='text-sm text-gray-400 mt-1'>
+                  {post.category}
+              </p>
             </div>
           );
         })}
