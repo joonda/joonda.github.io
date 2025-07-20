@@ -1,6 +1,7 @@
 import {Button} from "@/components/ui/button";
 import {FaGithub} from "react-icons/fa";
 import { SiSpringboot } from "react-icons/si";
+import { BiLogoTypescript } from "react-icons/bi";
 import { FaLinkedin, FaVuejs, FaDocker, FaGitlab} from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import Link from "next/link";
@@ -54,6 +55,7 @@ export default function About() {
                         <Badge><SiSpringboot /> Spring Framework</Badge>
                         <Badge><GrMysql /> MySQL</Badge>
                         <Badge><FaVuejs /> Vue.js</Badge>
+                        <Badge><BiLogoTypescript /> TypeScript</Badge>
                         <Badge><FaDocker /> Docker</Badge>
                         <Badge><FaGitlab /> Gitlab</Badge>
                     </CardFooter>
@@ -94,6 +96,7 @@ export default function About() {
                         </CardContent>
                         <CardFooter className="flex flex-wrap gap-1">
                             <Badge>Next.js</Badge>
+                            <Badge>TypeScript</Badge>
                             <Badge>Tailwind</Badge>
                             <Badge>Supabase</Badge>
                         </CardFooter>
