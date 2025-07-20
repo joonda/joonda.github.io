@@ -15,7 +15,7 @@ export default function Header() {
                     <Link href={'/blog'}>Posts</Link>
                     <Link href={'/about'}>About</Link>
                     <Button variant="ghost" size='icon' className="size-5">
-                        <Link href={'https://github.com/joonda'}>
+                        <Link href={'https://github.com/joonda'} target={'_blank'}>
                             <FaGithub />
                         </Link>
                     </Button>
