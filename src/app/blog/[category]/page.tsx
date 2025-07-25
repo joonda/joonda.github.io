@@ -6,7 +6,7 @@ interface CategoryPageProps {
   params: { category: string };
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams(): {category: string}[] {
   const categoryList = getCategoryList();
   const paramList = categoryList.map(category => ({category}))
   return paramList
