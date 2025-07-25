@@ -2,70 +2,74 @@ import { sync } from "glob";
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
-import { PostDesc, PostDetail } from "@/type/types";
+import { MdxHeader, Post } from "@/type/types";
 
 const BASE_PATH = "src/post";
 const POST_PATH = path.join(process.cwd(), BASE_PATH);
 
 export const getPostPath = (category?: string) => {
     const folder = category || "**";
-    const postPaths: string[] = sync(`${POST_PATH}/${folder}/*.mdx`)
+    const mdxPaths: string[] = sync(`${POST_PATH}/${folder}/*.mdx`)
 
-    return postPaths
+    return mdxPaths
 }
 
-export const getAllPosts = (): PostDesc[] => {
-    const postPaths= getPostPath()
+export const parseMdxAbstract = (mdxPath: string) => {
 
-    return postPaths.map((filePath) => {
-        
-        const id = path.basename(filePath, ".mdx")
+    // mdx file name (slug)
+    const mdxSlug = path.basename(mdxPath, ".mdx");
+    const mdxCategory = path.dirname(mdxPath).split(path.sep).pop()!;
 
-        // filePath를 split 한뒤, 카테고리만 pop()
-        const category = path.dirname(filePath).split(path.sep).pop() || "All";
-        
-        const formattedCategory = category.charAt(0).toUpperCase() + category.slice(1);
+    const url = `/blog/${mdxCategory}/${mdxSlug}`;
+    const categoryName = mdxCategory.charAt(0).toUpperCase() + mdxCategory.slice(1);
 
-        const fileContents = fs.readFileSync(filePath, "utf-8");
-
-        const { data } = matter(fileContents);
-
-        return {
-            id,
-            title: data.title,
-            date: new Date(data.date),
-            category: formattedCategory
-        };
-    })
+    return { url, mdxCategory, categoryName, mdxSlug };
 }
 
-export const getPostList = (category?: string): PostDesc[] => {
-    const allPosts = getAllPosts();
+export const parseMdxDetails = (mdxPath: string) => {
+    const fileContents = fs.readFileSync(mdxPath, "utf8");
+    const { data, content } = matter(fileContents);
 
-    const filteredPosts = category ? allPosts.filter(post => post.category === category) : allPosts
-
-    return filteredPosts.sort((a, b) => b.date.getTime() - a.date.getTime())
+    const mdxHeader = data as MdxHeader
+    const date = new Date(mdxHeader.date);
+    return { ...mdxHeader, date, content };
 }
 
-export const getPostDetail = async (
-    category: string, slug: string
-): Promise<PostDetail> => {
+const parsePost = async (mdxPath: string) => {
+    const postAbstract = parseMdxAbstract(mdxPath);
+    const postDetails = parseMdxDetails(mdxPath);
 
-        const filePath = path.join(POST_PATH, category, `${slug}.mdx`)
-
-        if (!fs.existsSync(filePath)) {
-            throw new Error (`File not found: ${filePath}`);
-        }
-
-        const fileContents = fs.readFileSync(filePath, "utf-8")
-    
-        const {data, content} = matter(fileContents)
-    
-        return {
-            id: slug,
-            title: data.title,
-            date: new Date(data.date),
-            category,
-            content: content
-    } 
+    return {
+        ...postAbstract,
+        ...postDetails
+    }
 }
+
+export const getPostList = async (category?: string): Promise<Post[]> => {
+    const postPaths = getPostPath(category);
+    const postList = await Promise.all(postPaths.map((post) => parsePost(post)));
+
+    return postList;
+}
+
+const sortPostList = (PostList: Post[]) => {
+    return PostList.sort((a, b) => b.date.getTime() - a.date.getTime());
+}
+
+export const getSortedPostList = async (category?: string) => {
+    const postList = await getPostList(category);
+    return sortPostList(postList);
+}
+
+export const getCategoryList = () => {
+    const categoryPaths = sync(`${POST_PATH}/*`);
+    const categoryList = categoryPaths.map((p) => p.split(path.sep).slice(-1)?.[0]);
+
+    return categoryList;
+}
+
+export const getPostDetail = async (category: string, slug: string) => {
+    const filePath = `${POST_PATH}/${category}/${slug}.mdx`;
+    const detail = await parsePost(filePath);
+    return detail;
+};

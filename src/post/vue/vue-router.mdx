@@ -23,7 +23,7 @@ npm install vue-router
 
 1. `router` > `index.js`
 ```javascript
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'src/post/vue/vue-router.mdx'
 import AboutView from '@/views/AboutView.vue'
 import HomeView from '@/views/HomeView.vue'
 
@@ -114,7 +114,7 @@ export default {}
   </div>
 </template>
 
-import { useRouter } from 'vue-router'
+import { useRouter } from 'src/post/vue/vue-router.mdx'
 const router = useRouter()
 const goAboutPage = () => {
     router.push('/about')

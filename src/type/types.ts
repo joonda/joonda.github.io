@@ -1,10 +1,12 @@
-export interface PostDesc {
-    id: string;
+export interface MdxHeader {
     title: string;
     date: Date;
-    category: string;
 }
 
-export interface PostDetail extends PostDesc {
+export interface Post extends MdxHeader {
+    url: string;
+    mdxCategory: string;
+    categoryName: string;
+    mdxSlug: string;
     content: string;
 }

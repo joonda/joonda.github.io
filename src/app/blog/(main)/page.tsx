@@ -1,10 +1,10 @@
 import MainPage from "@/components/mainpage";
-import { getPostList } from "@/lib/posts";
+import { getSortedPostList } from "@/lib/posts";
 
 
 export default async function Main() {
 
-    const postList = await getPostList()
+    const postList = await getSortedPostList()
 
     return (
         <MainPage postList={postList} />

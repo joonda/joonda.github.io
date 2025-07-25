@@ -1,8 +1,8 @@
-import { PostDetail } from "@/type/types";
+import {Post} from "@/type/types";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 interface Props {
-    post: PostDetail;
+    post: Post;
 }
 
 export const PostBody = ({post}: Props) => {
