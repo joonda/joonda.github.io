@@ -5,9 +5,10 @@ import {getCategoryList} from "@/lib/posts";
 
 interface MainPageProps {
   postList: Post[];
+  category?: string;
 }
 
-export default async function MainPage({ postList }: MainPageProps) {
+export default async function MainPage({ postList, category }: MainPageProps) {
 
   const categoryList = getCategoryList()
 
@@ -18,9 +19,11 @@ export default async function MainPage({ postList }: MainPageProps) {
         <Link href={`/blog`} className="mr-2">
           <Button>All</Button>
         </Link>
-        { categoryList.map((category, index) => (
-            <Link key={index} href={`/blog/${category}`} className="mr-2">
-              <Button>{category.charAt(0).toUpperCase() + category.slice(1)}</Button>
+        { categoryList.map((c, index) => (
+            <Link key={index} href={`/blog/${c}`} className="mr-2">
+              <Button variant={category === c ? "default" : "outline"}>
+                  {c.charAt(0).toUpperCase() + c.slice(1)}
+              </Button>
             </Link>
         ))}
       </section>
