@@ -17,7 +17,7 @@ export default async function MainPage({ postList, category }: MainPageProps) {
       <section className="p-4">
         <p className="text-3xl py-4 font-semibold">Tags</p>
         <Link href={`/blog`} className="mr-2">
-          <Button>All</Button>
+          <Button variant={!category ? "default" : "outline"}>All</Button>
         </Link>
         { categoryList.map((c, index) => (
             <Link key={index} href={`/blog/${c}`} className="mr-2">
