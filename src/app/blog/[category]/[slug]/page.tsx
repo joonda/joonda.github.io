@@ -66,8 +66,7 @@ export default async function Page({ params }: PageProps) {
         <p className="mt-4">{post.date.toLocaleDateString()}</p>
       </div>
       <div className="mt-20">
-        <article className="prose max-w-3xl mx-auto">
-          {/* <MdxContent source={detail} /> */}
+        <article className="prose dark:prose-invert max-w-3xl mx-auto">
           <PostBody post={post} />
         </article>
       </div>
