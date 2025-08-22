@@ -57,7 +57,7 @@ export default function About() {
                         <Badge><FaVuejs /> Vue.js</Badge>
                         <Badge><BiLogoTypescript /> TypeScript</Badge>
                         <Badge><FaDocker /> Docker</Badge>
-                        <Badge><FaGitlab /> Gitlab</Badge>
+                        <Badge><FaGithub /> Github</Badge>
                     </CardFooter>
                 </Card>
             </div>
