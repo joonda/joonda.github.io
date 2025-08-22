@@ -1,11 +1,10 @@
 import {Button} from "@/components/ui/button";
-import {FaGithub} from "react-icons/fa";
-import { SiSpringboot } from "react-icons/si";
-import { BiLogoTypescript } from "react-icons/bi";
-import { FaLinkedin, FaVuejs, FaDocker, FaGitlab} from "react-icons/fa";
-import { GrMysql } from "react-icons/gr";
+import {FaDocker, FaGithub, FaLinkedin, FaVuejs} from "react-icons/fa";
+import {SiSpringboot} from "react-icons/si";
+import {BiLogoTypescript} from "react-icons/bi";
+import {GrMysql} from "react-icons/gr";
 import Link from "next/link";
-import {Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter} from "@/components/ui/card";
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
 
 export default function About() {
